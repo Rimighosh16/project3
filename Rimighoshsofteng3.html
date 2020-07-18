@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>javascript validation</title>
+   <link rel="stylesheet"css/style.css" type="text/css">
+   <script>
+      function validate()
+	  {
+	    var name1=document.getElementById("fname").value;	
+		var name2=document.getElementById("aname").value;
+		var name3=document.getElementById("pname").value;
+        var name4=document.getElementById("abtme").value;			
+			if(name1=="")
+			{
+			  alert('enter your FIRST NAME');
+			  return false;
+			}
+			if(name2=="")
+			{
+			  alert('enter your ADDRESS');
+			  return false;
+			}
+			if(name3=="")
+			{
+			  alert('enter your PASSWORD');
+			  return false;
+			}
+			if(name4=="")
+			{
+			  alert('WRITE IN COMMENT BOX');
+			  return false;
+			}
+			
+			var name=document.getElementById("mobile").value;
+			if(name.length!=10)
+			 {
+			    alert("Invalid TELEPHONE NO");
+				 return false;
+			 }
+			 
+	        var email=document.getElementById("email").value;
+		    var pattern= /^[^ ]+@[^ ]+\.[a-z]{2,3}$/	
+		    if(email.match(pattern))
+			 {
+			    return true;
+			 }
+			else
+			{
+				alert("Invalid EMAIL");
+				 return false;
+			}
+		}
+		</script>
+</head>
+<body>
+  <h1>REGISTRATION FORM</h1>
+  <form action="test.html" method="post" onsubmit="return validate()">
+	<table>
+	  <tr><td>Name</td> <td> <input type=textname=fname id="fname" size=40></td></tr>
+	  <tr><td>Address</td> <td> <input type=textname=aname id="aname"size=40></td></tr>
+	  <tr><td>E-mail Address</td> <td> <input type="text" id="email" size=40></td></tr>
+	  <tr><td>Password</td> <td> <input type=textname=pname id="pname"size=40></td></tr>
+	  <tr><td>Telephone</td> <td> <input type=textname=fname id="mobile" size=40></td></tr>
+	  <tr><td>SELECT YOUR COURSE</td> <td><select name="btech"><option value="btech">BTECH</option></select></td>
+	  <tr><td>Comments</td> <td><textarea name=abtme id="abtme"></textarea></td></tr>
+	  </table>
+	  <input type=submit name=submit value=submit>
+	  <input type=reset name=reset value=reset>
+	</form>
+</body>
+</html>
